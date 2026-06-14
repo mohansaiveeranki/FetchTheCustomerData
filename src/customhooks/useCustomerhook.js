@@ -15,7 +15,7 @@ export function useCustomerhook() {
           throw new Error("Failed to fetch users");
         }
         const result = await response.json();
-        setData(result.users);
+        setData(result.users || []);
       } catch (err) {
         setError(err.message);
       } finally {
